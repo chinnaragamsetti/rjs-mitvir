@@ -23,11 +23,11 @@ class NoteForm extends Component {
     <NotesContext.Consumer>
       {(value) => {
         const { addNotes } = value;
-
         const onAddNotes = () => {
           const { title, description, imageLink } = this.state;
           addNotes({ title, description, imageLink, id: uuidv4() });
         };
+
         return (
           <div className="note-form-cont">
             <form className="form-cont">
@@ -52,7 +52,7 @@ class NoteForm extends Component {
               <label className="image-label" htmlFor="image-label"></label>
               <input
                 className="image-input"
-                onChange={this.onChangeImage}
+                onClick={onAddNotes}
                 type="text"
                 id="image-label"
               />

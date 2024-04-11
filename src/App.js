@@ -24,7 +24,7 @@ class App extends Component {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" component={LoginPage} />
-            <Route exact path="/Home" component={HomePage} />
+            <Route exact path="/HomePage" component={HomePage} />
             <Route exact path="/note/:id" component={NoteDetail} />
             <Route exact path="/NoteForm" component={NoteForm} />
           </Routes>
