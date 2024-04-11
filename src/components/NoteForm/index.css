@@ -1,0 +1,9 @@
+.note-form-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.form-cont {
+  box-shadow: 1px 1px 3px 1px lightgrey;
+}
