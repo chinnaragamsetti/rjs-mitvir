@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 import NotesContext from "../../context/NotesContext";
 
 import "./index.css";
@@ -7,26 +7,27 @@ import "./index.css";
 class NoteForm extends Component {
   state = { title: "", description: "", imageLink: "" };
 
-  renderNoteFrom = () => (
+  onChangeImage = (event) => {
+    this.setState({ imageLink: event.target.value });
+  };
+
+  onChangeTitle = (event) => {
+    this.setState({ title: event.target.value });
+  };
+
+  onChangeDescription = (event) => {
+    this.setState({ description: event.target.value });
+  };
+
+  renderNoteForm = () => (
     <NotesContext.Consumer>
       {(value) => {
-        const { title, description, imageLink } = this.state;
+        const { addNotes } = value;
+
         const onAddNotes = () => {
-          addNotes({ title, description, imageLink ,id:uuid v4()});
+          const { title, description, imageLink } = this.state;
+          addNotes({ title, description, imageLink, id: uuidv4() });
         };
-
-        const onChangeImage = (event) => {
-          this.setState({ imageLink: event.target.value });
-        };
-        
-        const onChangeTitle = (event) => {
-          this.setState({ title: event.target.value });
-        };
-
-        const onChangeDescription = (event) => {
-          this.setState({ description: event.target.value });
-        };
-
         return (
           <div className="note-form-cont">
             <form className="form-cont">
@@ -64,7 +65,7 @@ class NoteForm extends Component {
   );
 
   render() {
-    return <>{this.renderNoteFrom()}</>;
+    return <>{this.renderNoteForm()}</>;
   }
 }
 

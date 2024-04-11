@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";
 import NoteDetail from "./components/NoteDetail";
@@ -22,12 +22,12 @@ class App extends Component {
     return (
       <NotesContext.Provider value={{ notesList, addNotes: this.addNotes }}>
         <BrowserRouter>
-          <Switch>
+          <Routes>
             <Route exact path="/" component={LoginPage} />
             <Route exact path="/Home" component={HomePage} />
             <Route exact path="/note/:id" component={NoteDetail} />
             <Route exact path="/NoteForm" component={NoteForm} />
-          </Switch>
+          </Routes>
         </BrowserRouter>
       </NotesContext.Provider>
     );
