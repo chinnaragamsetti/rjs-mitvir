@@ -17,10 +17,7 @@ class LoginPage extends Component {
     this.setState({ password: event.target.value });
   };
 
-  onSubmitSuccess = () => {
-    const { history } = this.props;
-    history.replace("/HomePage");
-  };
+  onSubmitSuccess = () => {};
 
   onSubmitFailure = () => {
     this.setState({ showSubmitError: true });
@@ -34,7 +31,9 @@ class LoginPage extends Component {
     const { username, password } = this.state;
 
     if (username === dummyUsername && password === dummyPassword) {
-      this.onSubmitSuccess();
+      // this.onSubmitSuccess();
+      const { history } = this.props;
+      history.replace("/HomePage");
     } else {
       this.onSubmitFailure();
     }

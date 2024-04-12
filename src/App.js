@@ -1,12 +1,12 @@
 import { Component } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";
-import NoteDetail from "./components/NoteDetail";
+// import NoteDetail from "./components/NoteDetail";
+import NotesContext from "./context/NotesContext";
+// import NoteForm from "./components/NoteForm";
 
 import "./App.css";
-import NotesContext from "./context/NotesContext";
-import NoteForm from "./components/NoteForm";
 
 class App extends Component {
   state = { notesList: [] };
@@ -25,8 +25,6 @@ class App extends Component {
           <Routes>
             <Route exact path="/" component={LoginPage} />
             <Route exact path="/HomePage" component={HomePage} />
-            <Route exact path="/note/:id" component={NoteDetail} />
-            <Route exact path="/NoteForm" component={NoteForm} />
           </Routes>
         </BrowserRouter>
       </NotesContext.Provider>
@@ -35,3 +33,11 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+ <Route exact path="/note/:id" component={NoteDetail} />
+          <Route exact path="/NoteForm" component={NoteForm} />
+ 
+
+
+            */
