@@ -26,6 +26,7 @@
   color: #ffffff;
   box-shadow: 1px 1px 3px 1px lightgrey;
   border: none;
+  cursor: pointer;
 }
 .error-message {
   font-size: 10px;

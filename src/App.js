@@ -1,10 +1,10 @@
 import { Component } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import NotesContext from "./context/NotesContext";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage";
-// import NoteDetail from "./components/NoteDetail";
-import NotesContext from "./context/NotesContext";
-// import NoteForm from "./components/NoteForm";
+import NoteDetail from "./components/NoteDetail";
+import NoteForm from "./components/NoteForm";
 
 import "./App.css";
 
@@ -22,10 +22,12 @@ class App extends Component {
     return (
       <NotesContext.Provider value={{ notesList, addNotes: this.addNotes }}>
         <BrowserRouter>
-          <Routes>
+          <Switch>
             <Route exact path="/" component={LoginPage} />
             <Route exact path="/HomePage" component={HomePage} />
-          </Routes>
+            <Route exact path="/NoteForm" component={NoteForm} />
+            <Route exact path="/note/:id" component={NoteDetail} />
+          </Switch>
         </BrowserRouter>
       </NotesContext.Provider>
     );
@@ -33,11 +35,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
- <Route exact path="/note/:id" component={NoteDetail} />
-          <Route exact path="/NoteForm" component={NoteForm} />
- 
-
-
-            */

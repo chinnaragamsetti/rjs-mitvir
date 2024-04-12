@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { useNavigate } from "react-router-dom";
 import NotesContext from "../../context/NotesContext";
 import NoteItem from "../NoteItem";
 
@@ -11,14 +10,17 @@ class HomePage extends Component {
       {(value) => {
         const { notesList } = value;
 
-        const navigate = useNavigate(); // Using useNavigate hook to get navigation functionality
-
         const onClickNote = () => {
-          navigate("/NoteForm"); // Use navigate function to redirect
+          const { history } = this.props;
+          history.replace("/NoteFrom");
         };
         return (
           <div className="home-main-cont">
-            <input type="search" className="search" />
+            <input
+              type="search"
+              className="search"
+              placeholder="Search your notes"
+            />
             <ul className="notes-list">
               {notesList.map((eachNote) => (
                 <NoteItem key={eachNote.id} noteItemDetails={eachNote} />

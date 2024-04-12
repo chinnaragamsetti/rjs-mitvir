@@ -2,4 +2,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  height: 100vh;
+}
+.search {
+  width: 50%;
+  box-shadow: 1px 1px 3px 1px lightgrey;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  box-shadow: 1px 1px 3px 1px lightgrey;
+}
+.floating-button {
+  align-self: flex-end;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2979ff;
+  border: none;
+  color: #ffffff;
 }
